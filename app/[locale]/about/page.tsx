@@ -59,11 +59,10 @@ export default function About({ params }: { params: { locale: 'es' | 'en' } }) {
             alt={t.altSuit}
             width={320}
             height={480}
-            priority
-            unoptimized
-            sizes="(min-width:1024px) 280px, (min-width:768px) 250px, 210px"
+            decoding="async"
+            loading="eager"
             className="rounded-2xl border w-[210px] md:w-[250px] lg:w-[280px] h-[300px] md:h-[340px] lg:h-[380px] object-cover"
-            style={{ objectPosition: 'center 25%' }} // menos aire sobre la cabeza
+            style={{ objectPosition: 'center 25%',objectFit: 'cover' }} // menos aire sobre la cabeza
           />
         </div>
         <div className="order-2 prose max-w-none space-y-4">
@@ -108,11 +107,10 @@ export default function About({ params }: { params: { locale: 'es' | 'en' } }) {
             alt={t.altACT}
             width={420}
             height={320}
-            priority
-            unoptimized
-            sizes="(min-width:1024px) 340px, (min-width:768px) 300px, 250px"
+            decoding="async"
+            loading="eager"
             className="rounded-2xl border w-[250px] md:w-[300px] lg:w-[340px] h-[260px] md:h-[300px] lg:h-[340px] object-cover"
-            style={{ objectPosition: 'center 40%' }} // recorte visual para equilibrar altura
+            style={{ objectPosition: 'center 40%', objectFit: 'cover' }} // recorte visual para equilibrar altura
           />
         </div>
       </section>
