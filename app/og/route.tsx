@@ -1,9 +1,8 @@
 import { ImageResponse } from 'next/og'
-export const runtime = 'edge'
-export const alt = 'Fernando Parada — Open Graph'
-export const size = { width: 1200, height: 630 }
-export const contentType = 'image/png'
 
+export const runtime = 'edge'
+export const contentType = 'image/png'
+export const size = { width: 1200, height: 630 }
 export async function GET() {
   return new ImageResponse(
     (
@@ -15,7 +14,8 @@ export async function GET() {
           background: 'linear-gradient(135deg, #6BA292 0%, #E5C687 100%)',
           padding: 60,
           color: '#1f2937',
-          fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif',
+          fontFamily:
+            'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif',
         }}
       >
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 760 }}>
