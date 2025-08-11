@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FAFAF8;
+  --ink: #333333;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.prose h1, .prose h2, .prose h3 { font-weight: 700; }
+.prose a { text-decoration: underline; }
+
+/* === Animations === */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-fadeUp { animation: fadeUp .6s ease-out both; }
+.animate-fadeIn { animation: fadeIn .8s ease-out both; }
+
+/* Simple delays */
+.delay-150 { animation-delay: .15s; }
+.delay-300 { animation-delay: .30s; }
+.delay-500 { animation-delay: .50s; }
+
+/* Page transition (fade + ligera elevación + blur sutil) */
+@keyframes pageInBlur {
+  0%   { opacity: 0; transform: translateY(6px); filter: blur(6px); }
+  100% { opacity: 1; transform: translateY(0);  filter: blur(0);   }
+}
+
+.animate-pageIn {
+  animation: pageInBlur .45s cubic-bezier(.22,.61,.36,1) both;
+  will-change: opacity, transform, filter;
+}
+
+/* Respeta accesibilidad: menos movimiento = sin animación */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pageIn,
+  .animate-fadeIn,
+  .animate-fadeUp { animation: none !important; }
+}
+
