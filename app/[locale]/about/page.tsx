@@ -107,6 +107,7 @@ export default function About({ params }: { params: { locale: 'es' | 'en' } }) {
             alt={t.altACT}
             width={420}
             height={320}
+            sizes="(min-width:1024px) 340px, (min-width:768px) 300px, 250px"
             className="rounded-2xl border w-[250px] md:w-[300px] lg:w-[340px] h-[260px] md:h-[300px] lg:h-[340px] object-cover"
             style={{ objectPosition: 'center 40%' }} // recorte visual para equilibrar altura
           />
